@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+Nhập từ: <input type="text" id="nhap"> <input type="button" value="Dịch" onclick="dich()" >
+<p id="result"/>
+</body>
+</html>
+<script>
+    function dich() {
+        let eng = ["hello","pen","pencil","john wick","dog","girl"];
+        let viet =["xin chào","bút", "bút chì","ông ba bị","chó","gái"];
+        let a = document.getElementById("nhap").value;
+        let index_eng = 0;
+        let result = " ";
+        for (i = 0; i < eng.length; i++){
+            if (a == eng[i]){
+                index_eng = i;
+                for (let j = 0; j < viet.length; j++){
+                    if (index_eng == j){
+                        result = viet[j];
+                    }
+                }
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
